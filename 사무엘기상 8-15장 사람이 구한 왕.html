@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사무엘기상 8~15장 — 인간의 요구, 하나님의 경륜</title>
+<meta name="description" content="사무엘기상 8장부터 15장까지, 왕을 구하는 백성과 그 요구 속에서도 자신의 경륜을 이루어 가시는 하나님을 따라가는 묵상.">
+<meta property="og:title" content="사무엘기상 8~15장 — 인간의 요구, 하나님의 경륜">
+<meta property="og:description" content="사무엘의 아들들부터 사울의 폐위까지, 사람이 구한 왕과 하나님께서 예비하신 뜻을 따라가는 말씀 묵상.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#161225;
+    --bg-mid:#1f1a30;
+    --bg-wine:#241621;
+    --gold:#c9a227;
+    --gold-bright:#e3c04b;
+    --wine:#8a2f3f;
+    --wine-bright:#b5455a;
+    --parchment:#ece4d3;
+    --parchment-dim:#c7bfae;
+    --muted:#9c8fb8;
+    --rule:rgba(201,162,39,0.28);
+    --serif:'Noto Serif KR', serif;
+    --sans:'Noto Sans KR', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--parchment);
+    font-family:var(--sans);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8vh 6vw 12vh;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(201,162,39,0.10), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(138,47,63,0.20), transparent 60%),
+      var(--bg-deep);
+    overflow:hidden;
+  }
+  #crownCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0.85;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+  }
+  .hero-book{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.92rem;
+    letter-spacing:0.18em;
+    color:var(--muted);
+    margin-bottom:1.6rem;
+  }
+  .hero-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.18;
+    color:var(--parchment);
+    letter-spacing:-0.01em;
+  }
+  .hero-title .range{
+    display:block;
+    font-weight:400;
+    font-size:0.42em;
+    color:var(--gold-bright);
+    margin-top:0.9rem;
+    letter-spacing:0.04em;
+  }
+  .hero-theme{
+    margin-top:2.6rem;
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(1.15rem, 2.6vw, 1.5rem);
+    color:var(--parchment-dim);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:1.3rem 0;
+  }
+  .hero-scroll{
+    position:relative;
+    z-index:2;
+    margin-top:4rem;
+    font-size:0.82rem;
+    color:var(--muted);
+    letter-spacing:0.1em;
+  }
+  .hero-scroll::after{
+    content:'';
+    display:block;
+    width:1px;
+    height:38px;
+    margin:0.9rem auto 0;
+    background:linear-gradient(to bottom, var(--gold), transparent);
+    animation:scrollLine 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollLine{
+    0%,100%{opacity:0.25; transform:scaleY(0.6); transform-origin:top;}
+    50%{opacity:1; transform:scaleY(1); transform-origin:top;}
+  }
+
+  /* ---------- CHAPTER SECTIONS ---------- */
+  .chapter{
+    position:relative;
+    padding:11vh 6vw;
+    display:flex;
+    justify-content:center;
+  }
+  .chapter-inner{
+    max-width:700px;
+    width:100%;
+  }
+  .chapter.tone-open{ background:linear-gradient(180deg, var(--bg-deep), var(--bg-mid)); }
+  .chapter.tone-demand{ background:var(--bg-mid); }
+  .chapter.tone-warn{ background:linear-gradient(180deg, var(--bg-mid), #221a33); }
+  .chapter.tone-call{ background:#211c34; }
+  .chapter.tone-anoint{ background:linear-gradient(180deg, #211c34, #251d30); }
+  .chapter.tone-victory{ background:#251d30; }
+  .chapter.tone-fail{ background:linear-gradient(180deg, #251d30, var(--bg-wine)); }
+  .chapter.tone-close{ background:linear-gradient(180deg, var(--bg-wine), #171025); }
+
+  .chapter-label{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    margin-bottom:0.9rem;
+  }
+  .chapter-title{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(1.7rem, 4vw, 2.35rem);
+    color:var(--parchment);
+    margin-bottom:2.2rem;
+    line-height:1.35;
+  }
+  .chapter p{
+    font-size:1.04rem;
+    color:var(--parchment-dim);
+    margin-bottom:1.4rem;
+    max-width:64ch;
+  }
+  .chapter p:last-of-type{ margin-bottom:0; }
+
+  .verse{
+    margin:2.2rem 0;
+    padding:1.4rem 0 1.4rem 1.6rem;
+    border-left:2px solid var(--gold);
+    background:linear-gradient(90deg, rgba(201,162,39,0.06), transparent);
+  }
+  .verse p{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.22rem;
+    color:var(--parchment);
+    line-height:1.7;
+    margin-bottom:0.6rem;
+    max-width:56ch;
+  }
+  .verse cite{
+    font-style:normal;
+    font-family:var(--sans);
+    font-size:0.86rem;
+    color:var(--muted);
+    letter-spacing:0.04em;
+  }
+  .verse.mark-wine{ border-left-color:var(--wine-bright); }
+  .verse.mark-wine p{ color:#f0dfe2; }
+
+  .keyverse{
+    margin:2.6rem 0;
+    padding:2.2rem 2rem;
+    text-align:center;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .keyverse p{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(1.4rem, 3vw, 1.9rem);
+    color:var(--gold-bright);
+    line-height:1.6;
+    max-width:none;
+    margin-bottom:0.9rem;
+  }
+  .keyverse cite{
+    font-style:normal;
+    font-family:var(--sans);
+    font-size:0.86rem;
+    color:var(--muted);
+  }
+
+  /* reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:#12101c;
+    padding:14vh 6vw 10vh;
+    text-align:center;
+  }
+  .closing-inner{ max-width:640px; margin:0 auto; }
+  .closing-mark{
+    width:34px;
+    height:34px;
+    margin:0 auto 2rem;
+    border:1px solid var(--gold);
+    transform:rotate(45deg);
+    position:relative;
+  }
+  .closing-mark::after{
+    content:'';
+    position:absolute;
+    inset:8px;
+    border:1px solid var(--gold);
+  }
+  .closing p{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--parchment-dim);
+    line-height:1.85;
+    margin-bottom:1.2rem;
+  }
+  .closing .final{
+    font-weight:600;
+    color:var(--gold-bright);
+    font-size:1.3rem;
+    margin-top:1.8rem;
+  }
+  .footer-range{
+    margin-top:5rem;
+    font-size:0.82rem;
+    color:var(--muted);
+    letter-spacing:0.1em;
+  }
+
+  @media (max-width:600px){
+    .chapter{ padding:9vh 6.5vw; }
+    .verse{ padding-left:1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <canvas id="crownCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-book">사무엘기상 · 사무엘상</div>
+    <h1 class="hero-title">사람이 구한 왕
+      <span class="range">삼상 8장 ~ 15장</span>
+    </h1>
+    <p class="hero-theme">인간의 요구, 하나님의 경륜</p>
+  </div>
+  <div class="hero-scroll">아래로 스크롤하여 읽기</div>
+</section>
+
+<section class="chapter tone-open reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">시대의 문턱</div>
+    <h2 class="chapter-title">한 시대의 끝을 알리는 문장</h2>
+
+    <div class="verse">
+      <p>“사무엘은 나이가 많이 들자 아들들을 이스라엘의 사사로 삼았다.”</p>
+      <cite>삼상 8:1</cite>
+    </div>
+
+    <p>이 한 문장은 한 시대의 끝을 조용히 알리는 서두처럼 들립니다. 하나님께서 세우신 사사 시대가 저물고, 사람의 손으로 세워지는 새로운 질서가 시작되려는 문턱입니다. 그러나 이 시작은 단순한 세대교체가 아니라, 보이지 않는 깊은 전환—하나님을 왕으로 모시던 백성이 다른 왕을 구하는 내면의 변화—를 드러내고 있습니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-demand reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">거절</div>
+    <h2 class="chapter-title">나를 거절하여</h2>
+
+    <p>사무엘의 아들들이 “사무엘의 길을 따르지 않았다”는 사실은 단순한 도덕적 실패가 아니라, 하나님께서 사람의 계승이 아니라 자신의 주권으로 역사하신다는 것을 드러냅니다. 인간의 혈통은 하나님의 통치를 이어갈 수 없으며, 하나님 나라의 본질은 언제나 하나님 자신에게서 비롯됩니다. 그런데 바로 이 틈에서 백성의 요구가 터져 나옵니다.</p>
+
+    <div class="verse">
+      <p>“이제 다른 모든 민족처럼 우리를 다스릴 왕을 우리에게 세워 주십시오.”</p>
+      <cite>삼상 8:5</cite>
+    </div>
+
+    <p>이 말은 단순한 정치적 요구가 아니라, 하나님께서 밝히신 것처럼 “그들은 너를 거절한 것이 아니라 나를 거절하여 자신들의 왕이 되지 못하게 한 것이다.”(삼상 8:7)라는 선언으로 해석됩니다. 여기서 성경의 큰 흐름이 드러납니다. 인간은 언제나 보이지 않는 하나님보다 보이는 질서를 더 신뢰하려 하고, 하나님은 그 선택 속에서도 자신의 경륜을 이루어 가십니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-warn reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">왕의 손</div>
+    <h2 class="chapter-title">아닙니다, 우리에게도 왕이 있어야 하겠습니다</h2>
+
+    <p>사무엘은 왕의 권한을 경고합니다. 왕은 아들들을 취하고, 딸들을 취하며, 밭과 소산을 취하고, 결국 백성을 자신의 종으로 만들 것입니다(삼상 8:11-17). 이것은 단순한 정치 체제의 설명이 아니라, 하나님을 떠난 인간 통치의 본질을 드러냅니다. 하나님 없는 권력은 결국 사람을 소유하려는 방향으로 흐릅니다. 그러나 백성은 듣지 않습니다.</p>
+
+    <div class="verse">
+      <p>“아닙니다. 우리에게도 왕이 있어야 하겠습니다.”</p>
+      <cite>삼상 8:19</cite>
+    </div>
+
+    <p>이처럼 인간의 선택은 분명히 하나님을 떠나는 방향이지만, 하나님은 그 선택을 무너뜨리기보다 그 안으로 들어가 자신의 뜻을 이루십니다. 이것이 하나님의 경륜입니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-call reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">나귀를 찾던 사람</div>
+    <h2 class="chapter-title">일상의 길 위에서</h2>
+
+    <p>그리하여 이야기의 흐름은 한 젊은이에게로 이어집니다.</p>
+
+    <div class="verse">
+      <p>“그에게는 사울이라는 아들이 있었는데, 건장하고 잘생긴 사람이었다.”</p>
+      <cite>삼상 9:2</cite>
+    </div>
+
+    <p>사람의 눈에 보기에 합당한 왕의 모습이 등장합니다. 그러나 그의 시작은 왕이 되려는 의지가 아니라, 잃어버린 나귀를 찾는 평범한 여정입니다. 하나님은 이렇게 일상의 길 위에서 자신의 계획을 진행하십니다.</p>
+
+    <p>보이지 않는 손길이 이미 앞서 일하고 있었습니다.</p>
+
+    <div class="verse">
+      <p>“내일 이맘때에 내가… 한 사람을 너에게 보내리니 너는 그에게 기름을 부어… 통치자로 삼아라.”</p>
+      <cite>삼상 9:16</cite>
+    </div>
+
+    <p>사울은 우연처럼 보이는 길을 걷고 있었지만, 실제로는 하나님의 부르심 속으로 들어가고 있었습니다. 여기서 우리는 하나님의 경륜이 인간의 의도와 무관하게도 정확히 이루어진다는 사실을 보게 됩니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-anoint reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">기름부음</div>
+    <h2 class="chapter-title">또 다른 마음</h2>
+
+    <p>사무엘이 기름을 부으며 선언합니다.</p>
+
+    <div class="verse">
+      <p>“여호와께서 그대에게 기름을 부으시어… 통치자로 삼으셨습니다.”</p>
+      <cite>삼상 10:1</cite>
+    </div>
+
+    <p>그리고 “하나님께서 사울에게 또 다른 마음을 주셨다.”(삼상 10:9)라는 구절에서, 왕이 되는 것은 외적 지위가 아니라 하나님께서 주시는 내적 변화임이 드러납니다. 그러나 이 변화는 지속적인 순종 위에 서야 하는 것이었습니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-victory reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">구원과 균열</div>
+    <h2 class="chapter-title">결과를 앞세우는 마음</h2>
+
+    <p>사울은 처음에는 하나님의 영에 의해 움직이며 구원의 도구가 됩니다.</p>
+
+    <div class="verse">
+      <p>“그날 여호와는 이렇게 이스라엘을 구원하셨다.”</p>
+      <cite>삼상 14:23</cite>
+    </div>
+
+    <p>전쟁의 승리는 인간의 전략이 아니라 하나님의 개입으로 이루어졌습니다. 그러나 그 승리의 자리에서도 인간의 약함은 드러납니다. 사울은 자신의 판단으로 백성에게 무리한 맹세를 시키고, 하나님의 뜻을 묻는 대신 상황을 통제하려 합니다. 하나님과의 관계보다 결과를 앞세우는 마음이 서서히 드러납니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-fail reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">순종의 시험</div>
+    <h2 class="chapter-title">순종이 제사보다 나으니</h2>
+
+    <p>결정적인 순간은 아말렉과의 전쟁에서 찾아옵니다.</p>
+
+    <div class="keyverse">
+      <p>“보십시오, 순종하는 것이 희생 제물보다 낫고”</p>
+      <cite>삼상 15:22</cite>
+    </div>
+
+    <p>이 말씀은 단순한 교훈이 아니라, 하나님 나라의 본질을 드러내는 선언입니다. 하나님은 외적 행위보다 그분의 음성을 따르는 내적 관계를 원하십니다. 그러나 사울은 “백성을 두려워하여 그들의 음성만 듣고”(삼상 15:24) 순종에서 벗어납니다.</p>
+
+    <p>그 결과는 분명합니다.</p>
+
+    <div class="verse mark-wine">
+      <p>“여호와께서 왕을 거절하시어 더 이상 왕이 되지 못하게 하셨습니다.”</p>
+      <cite>삼상 15:23</cite>
+    </div>
+
+    <p>여기서 왕권의 문제는 정치적 실패가 아니라, 하나님과의 관계의 붕괴입니다. 하나님을 대신하는 왕은 세워질 수 있지만, 하나님을 대신할 수는 없습니다.</p>
+  </div>
+</section>
+
+<section class="chapter tone-close reveal">
+  <div class="chapter-inner">
+    <div class="chapter-label">감추어진 경륜</div>
+    <h2 class="chapter-title">남겨진 질문</h2>
+
+    <p>이 모든 흐름 속에서 하나의 더 깊은 질문이 남습니다. 왜 하나님은 백성이 요구한 왕을 허락하셨는가? 왜 실패할 것을 아시면서도 사울을 세우셨는가?</p>
+
+    <p>그 답은 성경 전체의 흐름 속에서 점진적으로 드러납니다. 인간이 세운 왕의 한계와 실패를 통해, 참된 왕이 누구인지 드러내시기 위함입니다. 사람의 기준으로 선택된 왕은 결국 무너지고, 하나님 마음에 맞는 왕이 필요함이 밝혀집니다. 이 과정은 단순한 역사 기록이 아니라, 하나님께서 참된 왕—자신의 뜻을 완전히 이루는 왕—을 준비하시는 길입니다.</p>
+
+    <p>결국 이 이야기는 사울에서 끝나지 않습니다. 인간의 요구로 시작된 왕정은 실패를 통해 정결케 되고, 하나님께서 직접 준비하신 왕을 향해 나아갑니다. 그리고 그 흐름은 궁극적으로 하나님 자신이 왕이 되시는 자리로 향합니다.</p>
+
+    <p>처음에 백성은 “우리에게 왕을 세워 달라”고 말했지만, 마지막에 드러나는 하나님의 의도는 이것입니다. 인간이 원하는 왕이 아니라, 하나님께서 주시는 왕, 그리고 결국 하나님 자신이 다스리시는 나라.</p>
+
+    <p>이렇게 이야기를 따라가다 보면, 처음에는 단순한 정치적 전환처럼 보였던 사건이 사실은 하나님의 깊은 경륜 속에 놓여 있었음을 깨닫게 됩니다. 하나님은 거절당하셨지만 물러나지 않으셨고, 인간의 선택 속에서도 자신의 길을 여전히 이루어 가십니다.</p>
+  </div>
+</section>
+
+<section class="closing reveal">
+  <div class="closing-inner">
+    <div class="closing-mark"></div>
+    <p>그리고 그 길의 끝에서 드러나는 하나님의 목적은 분명합니다.</p>
+    <p>하나님께서 사람 위에 군림하는 왕이 아니라, 사람 안에 거하시며 순종을 통해 다스리시는 참된 왕이 되시는 것.</p>
+    <p>그분의 통치는 외적 제도가 아니라, 마음을 얻는 통치이며, 결국 그분의 백성을 자신과 하나 되게 하는 데로 이끕니다.</p>
+    <p class="final">이것이 이 모든 이야기 속에 숨겨진,<br>그러나 점점 분명히 드러나는 하나님의 궁극적인 경륜입니다.</p>
+    <div class="footer-range">사무엘기상 8장 – 15장</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  // ---------- Scroll reveal ----------
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+  if (reduced) {
+    targets.forEach(function(el){ el.classList.add('is-visible'); });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  } else {
+    targets.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  // ---------- Hero crown particle canvas ----------
+  var canvas = document.getElementById('crownCanvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var hero = canvas.parentElement;
+  var W, H, dpr;
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = hero.clientWidth;
+    H = hero.clientHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // Stylized crown outline, normalized coordinates (x:0-1, y:0-1)
+  var crownPath = [
+    [0.30,0.62],[0.30,0.47],
+    [0.35,0.52],[0.38,0.34],
+    [0.41,0.50],[0.44,0.30],
+    [0.47,0.50],[0.50,0.28],
+    [0.53,0.50],[0.56,0.30],
+    [0.59,0.50],[0.62,0.34],
+    [0.65,0.52],[0.70,0.47],
+    [0.70,0.62],
+    [0.64,0.645],[0.58,0.655],[0.52,0.66],[0.46,0.655],[0.40,0.645],[0.36,0.62]
+  ];
+
+  // densify path by interpolating between consecutive points
+  function densify(path, perSeg){
+    var out = [];
+    for (var i = 0; i < path.length - 1; i++){
+      var a = path[i], b = path[i+1];
+      for (var t = 0; t < perSeg; t++){
+        var f = t / perSeg;
+        out.push([ a[0] + (b[0]-a[0])*f, a[1] + (b[1]-a[1])*f ]);
+      }
+    }
+    out.push(path[path.length-1]);
+    return out;
+  }
+
+  var dense = densify(crownPath, 5);
+
+  function makeParticles(){
+    var cx = W * 0.5, cy = H * 0.42, scale = Math.min(W, H*1.6) * 0.62;
+    var offX = cx - scale*0.5;
+    var offY = cy - scale*0.42;
+    return dense.map(function(p){
+      return {
+        tx: offX + p[0]*scale,
+        ty: offY + p[1]*scale,
+        x: Math.random()*W,
+        y: Math.random()*H*0.6,
+        r: 0.9 + Math.random()*1.3,
+        settled: false,
+        phase: Math.random()*Math.PI*2,
+        speed: 0.028 + Math.random()*0.02
+      };
+    });
+  }
+
+  var particles = makeParticles();
+  window.addEventListener('resize', function(){ particles = makeParticles(); });
+
+  var startTime = performance.now();
+  var convergeMs = 2600;
+
+  function frame(now){
+    ctx.clearRect(0,0,W,H);
+    var elapsed = now - startTime;
+    var progress = Math.min(1, elapsed / convergeMs);
+    var ease = 1 - Math.pow(1-progress, 3);
+
+    for (var i = 0; i < particles.length; i++){
+      var p = particles[i];
+      if (progress < 1){
+        p.x = p.x + (p.tx - p.x) * (0.02 + ease*0.06);
+        p.y = p.y + (p.ty - p.y) * (0.02 + ease*0.06);
+      } else {
+        p.phase += p.speed;
+        p.x = p.tx + Math.sin(p.phase) * 1.4;
+        p.y = p.ty + Math.cos(p.phase*0.8) * 1.4;
+      }
+      var alpha = 0.35 + 0.45*ease;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(227,192,75,' + alpha.toFixed(2) + ')';
+      ctx.fill();
+    }
+
+    if (!reduced) {
+      requestAnimationFrame(frame);
+    }
+  }
+
+  if (reduced) {
+    particles.forEach(function(p){ p.x = p.tx; p.y = p.ty; });
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(227,192,75,0.6)';
+      ctx.fill();
+    });
+  } else {
+    requestAnimationFrame(frame);
+  }
+})();
+</script>
+
+</body>
+</html>

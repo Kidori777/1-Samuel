@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>심판 너머의 언약 — 사무엘하 21~24장</title>
+<meta name="description" content="사무엘하 21장부터 24장까지, 기근과 심판을 지나 다윗의 노래와 아침 햇빛 같은 통치, 그리고 제단에서 그치는 재앙까지—하나님의 경륜을 따라가는 묵상.">
+<meta property="og:title" content="심판 너머의 언약 — 사무엘하 21~24장">
+<meta property="og:description" content="기근과 심판을 지나 다윗의 노래와 아침 햇빛 같은 통치, 그리고 제단에서 그치는 재앙까지. 죄와 심판, 속죄와 회복을 따라가는 사무엘하 묵상.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold: #E3B968;
+    --gold-soft: #C99a52;
+    --ink-light: #F1E6D3;
+    --ink-light-dim: #cfc0a6;
+    --ink-dark: #171208;
+    --ink-dark-dim: #3a2f1f;
+    --rule: rgba(227,185,104,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    color:var(--ink-light);
+    line-height:1.8;
+    background:linear-gradient(180deg,
+      #1C1B2E 0%,
+      #2A2140 13%,
+      #3A2438 26%,
+      #562B32 40%,
+      #7A3B2E 53%,
+      #9C5636 66%,
+      #B97B42 78%,
+      #D9A257 89%,
+      #F5E7C9 100%
+    );
+    overflow-x:hidden;
+  }
+  em, i { font-style: normal; }
+
+  canvas#embers{
+    position:fixed; inset:0; width:100%; height:100%;
+    pointer-events:none; z-index:0; opacity:0.55;
+  }
+
+  .wrap{ position:relative; z-index:1; }
+
+  header.hero{
+    min-height:92vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    padding:6vh 8vw;
+  }
+  .hero .ref{
+    font-family:'Noto Serif KR', serif;
+    font-weight:400; font-size:0.95rem;
+    letter-spacing:0.08em;
+    color:var(--gold);
+    margin-bottom:1.6rem;
+    opacity:0;
+    animation: fadeIn 1.4s ease forwards 0.3s;
+  }
+  .hero h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:clamp(2.4rem, 6vw, 4.2rem);
+    line-height:1.35;
+    max-width:14ch;
+    color:var(--ink-light);
+    opacity:0;
+    animation: fadeIn 1.6s ease forwards 0.6s;
+  }
+  .hero p.lede{
+    margin-top:2rem;
+    max-width:40ch;
+    font-size:1.02rem;
+    color:var(--ink-light-dim);
+    opacity:0;
+    animation: fadeIn 1.6s ease forwards 1.1s;
+  }
+  @keyframes fadeIn{ to{ opacity:1; } }
+
+  .hero-verse{
+    margin-top:3.4rem;
+    max-width:36ch;
+    font-family:'Noto Serif KR', serif;
+    font-size:1.05rem;
+    line-height:2;
+    color:var(--ink-light);
+    border-left:1px solid var(--rule);
+    padding-left:1.4rem;
+    text-align:left;
+    opacity:0;
+    animation: fadeIn 1.8s ease forwards 1.6s;
+  }
+  .hero-verse .cite{
+    display:block; margin-top:0.8rem;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:0.82rem; color:var(--gold-soft);
+  }
+
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 8vw 10vh;
+  }
+
+  section.beat{
+    padding:9vh 0;
+    border-top:1px solid rgba(227,185,104,0.14);
+  }
+  section.beat:first-of-type{ border-top:none; }
+
+  .beat .tag{
+    font-family:'Noto Serif KR', serif;
+    font-size:0.86rem;
+    color:var(--gold);
+    margin-bottom:0.9rem;
+    letter-spacing:0.02em;
+  }
+  .beat h2{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:clamp(1.5rem, 3.4vw, 1.9rem);
+    line-height:1.5;
+    margin-bottom:1.6rem;
+    color:var(--ink-light);
+  }
+  section.beat.dawn{
+    background:rgba(247,236,209,0.85);
+    margin:0 -8vw; padding:9vh 8vw;
+  }
+  section.beat.dawn h2, section.beat.dawn .tag{ color:var(--ink-dark); }
+  section.beat.dawn .tag{ color:#8a5a2a; }
+
+  .beat p{
+    font-size:1rem;
+    max-width:38em;
+    margin-bottom:1.3rem;
+    color:var(--ink-light-dim);
+  }
+  section.beat.dawn p{ color:var(--ink-dark-dim); }
+
+  blockquote{
+    font-family:'Noto Serif KR', serif;
+    font-size:1.15rem;
+    line-height:2;
+    color:var(--ink-light);
+    border-left:2px solid var(--gold);
+    padding:0.2rem 0 0.2rem 1.6rem;
+    margin:2.2rem 0;
+  }
+  section.beat.dawn blockquote{ color:var(--ink-dark); border-left-color:#a4671f; }
+  blockquote .cite{
+    display:block;
+    margin-top:0.7rem;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:0.82rem;
+    color:var(--gold-soft);
+  }
+  section.beat.dawn blockquote .cite{ color:#8a5a2a; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.9s ease, transform 0.9s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  footer.close{
+    padding:10vh 8vw 14vh;
+    text-align:center;
+    color:var(--ink-dark-dim);
+  }
+  footer.close .flow{
+    font-family:'Noto Serif KR', serif;
+    font-size:1rem;
+    letter-spacing:0.06em;
+    color:#8a5a2a;
+    margin-bottom:2.2rem;
+  }
+  footer.close p{
+    max-width:40em;
+    margin:0 auto 1.2rem;
+    font-size:1rem;
+    line-height:1.9;
+  }
+  footer.close .final{
+    margin-top:2.2rem;
+    font-family:'Noto Serif KR', serif;
+    font-size:1.08rem;
+    color:var(--ink-dark);
+    line-height:2;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ transition:none; opacity:1; transform:none; }
+    .hero *{ animation:none !important; opacity:1 !important; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="embers"></canvas>
+
+<div class="wrap">
+
+<header class="hero">
+  <span class="ref">사무엘하 21~24장</span>
+  <h1>심판 너머의 언약</h1>
+  <p class="lede">기근과 심판을 지나, 노래와 아침 햇빛을 지나, 다시 진노와 제단을 지나— 하나님은 무엇을 붙들고 계셨는가</p>
+  <div class="hero-verse">
+    다윗 시대에 연이어 삼 년 동안 기근이 들었다. 다윗이 여호와께 여쭈자 여호와께서 말씀하셨다. "이것은 사울 때문이며, 피를 흘리게 한 그의 집안 때문이다…"
+    <span class="cite">사무엘하 21:1</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="beat reveal">
+    <div class="tag">기근과 사울의 죄</div>
+    <p>땅이 메마르고 하늘이 닫힌 그 시간은 단순한 자연의 재난이 아니라, 보이지 않는 하나님의 기억이 역사 속에 다시 떠오른 순간이었습니다. 사람은 잊어도 하나님은 잊지 않으십니다. 과거 사울이 맹세를 어기고 기브온 사람들을 죽였던 그 일—그것은 단순한 정치적 판단이 아니라 하나님 앞에서의 언약 파괴였고, 그 언약의 피가 여전히 땅에서 부르짖고 있었던 것입니다.</p>
+    <p>다윗은 이 사실 앞에서 묻습니다.</p>
+    <blockquote>내가 어떻게 속죄해야 하겠습니까?<span class="cite">사무엘하 21:3</span></blockquote>
+    <p>이 질문은 단순한 해결책을 찾는 질문이 아니라, 하나님과 사람 사이에 깨진 질서를 회복하려는 갈망입니다. 하나님은 단순히 죄를 덮으시는 분이 아니라, 반드시 바로잡으시는 분이시기 때문입니다.</p>
+    <p>기브온 사람들의 요구는 무겁고도 두려운 것이었습니다. 사울의 집에서 일곱 사람이 여호와 앞에서 죽임을 당해야 한다는 것이었습니다(21:6). 이 장면은 인간적으로 이해하기 어려운 고통을 담고 있지만, 동시에 하나님 나라의 한 원리를 드러냅니다. 죄는 반드시 대가를 요구하며, 공동체의 죄는 공동체의 역사 속에서 해결되어야 한다는 것입니다.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">언약 안의 자비</div>
+    <blockquote>왕이… 므비보셋은 남겨 두었는데, 그것은… 요나단과 맹세가 있었기 때문이다<span class="cite">사무엘하 21:7</span></blockquote>
+    <p>심판 가운데서도 언약은 보존됩니다. 하나님의 경륜은 단순히 심판으로 끝나지 않고, 언약을 통해 생명을 이어가십니다. 심판과 자비가 동시에 흐르는 이 장면 속에서, 하나님은 자신의 신실하심을 놓지 않으십니다.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">리스바의 파수</div>
+    <p>그리고 리스바가 등장합니다.</p>
+    <blockquote>그녀는… 낮에는 하늘의 새들이, 밤에는 들짐승들이 그 시체들에 달려들지 못하게 하였다<span class="cite">사무엘하 21:10</span></blockquote>
+    <p>그녀의 침묵 속의 싸움은 단순한 모성의 슬픔이 아니라, 죽음 위에 남겨진 생명의 외침입니다. 이 처절한 기다림은 결국 다윗의 마음을 움직이고, 사울과 요나단의 뼈가 다시 모여 장사됩니다.</p>
+    <blockquote>그제야 하나님께서 그 땅을 위한 간청을 들어주셨다<span class="cite">사무엘하 21:14</span></blockquote>
+    <p>여기서 비로소 땅은 다시 숨을 쉽니다. 하나님의 공의가 이루어질 때, 창조 전체가 회복되기 시작합니다.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">전쟁과 늙은 용사</div>
+    <p>그러나 이야기는 여기서 멈추지 않습니다. 다시 전쟁이 일어나고, 다윗은 지쳐 갑니다(21:15). 이제 왕은 더 이상 젊지 않습니다. 한때 골리앗을 쓰러뜨렸던 그가 이제는 거인에게 위협을 받습니다. 그러나 이때 하나님은 다른 손들을 일으키십니다. 아비새, 엘하난, 요나단… 그들은 다윗을 대신하여 거인들을 쓰러뜨립니다.</p>
+    <blockquote>이스라엘의 등불이 꺼지게 됩니다<span class="cite">사무엘하 21:17</span></blockquote>
+    <p>이 말은 단순히 한 왕을 보호하려는 충성이 아니라, 하나님께서 세우신 통치의 빛이 계속 이어져야 함을 아는 고백입니다. 하나님의 경륜은 한 사람에게서 시작되지만, 결국 공동체 안에서 이어지고 확장됩니다.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">다윗의 노래</div>
+    <p>그리고 다윗은 노래합니다.</p>
+    <blockquote>여호와는 나의 바위, 나의 요새, 나를 건져 내시는 분<span class="cite">사무엘하 22:2</span></blockquote>
+    <p>이 노래는 단순한 승리의 기록이 아니라, 그의 인생 전체를 통과한 하나님에 대한 해석입니다. 죽음의 물결 속에서, 스올의 줄 속에서, 그는 부르짖었고 하나님은 들으셨습니다(22:5-7).</p>
+    <blockquote>그분은 높은 곳에서 손을 내미시어 나를 붙잡으시고 / 큰 물에서 나를 끌어내셨다네<span class="cite">사무엘하 22:17</span></blockquote>
+    <p>이 구절은 단지 다윗 개인의 이야기처럼 보이지만, 사실은 하나님의 구원의 방식 전체를 보여 줍니다. 하나님은 항상 위에서 손을 내미셔서, 스스로 빠져나올 수 없는 존재를 끌어내시는 분이십니다.</p>
+    <blockquote>여호와 외에 누가 하나님이며 / 우리 하나님 외에 누가 반석이리오?<span class="cite">사무엘하 22:32</span></blockquote>
+    <p>이 고백은 우상들로 가득한 세상 속에서 하나님이 유일한 근원이심을 선언하는 것입니다. 하나님은 단순히 도움을 주는 존재가 아니라, 존재 자체의 기초이십니다.</p>
+  </section>
+
+  <section class="beat dawn reveal">
+    <div class="tag">아침 햇빛 같은 통치</div>
+    <p>그리고 그의 마지막 말에서, 다윗은 왕권의 본질을 밝힙니다.</p>
+    <blockquote>사람을 의롭게 다스리고 / 하나님을 두려워하며 다스리는 이는… 아침 햇빛 같다<span class="cite">사무엘하 23:3-4</span></blockquote>
+    <p>하나님의 통치는 억압이 아니라 빛과 생명입니다. 의로운 통치는 땅에 새싹을 돋게 하는 아침 빛처럼, 생명을 자라게 합니다.</p>
+    <blockquote>그분께서 나와 영원한 언약을 맺으시어…<span class="cite">사무엘하 23:5</span></blockquote>
+    <p>다윗은 자신의 삶이 아니라 하나님의 언약을 붙듭니다. 그의 실패와 흔들림 속에서도 하나님은 언약을 통해 역사를 이어가십니다. 이것이 하나님의 경륜입니다—사람의 불완전함 위에 세워진 완전한 약속.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">용사들의 이야기</div>
+    <p>이어지는 용사들의 이야기는 한 왕의 영광을 넘어, 하나님이 어떻게 사람들을 사용하시는지를 보여 줍니다. 엘르아살이 손이 칼에 붙을 때까지 싸우고(23:10), 삼마가 밭 한가운데 서서 지키며 싸울 때(23:12), 성경은 반복해서 말합니다.</p>
+    <blockquote>여호와께서 큰 구원을 베풀어 주셨다.</blockquote>
+    <p>사람이 싸우지만, 구원은 하나님께 속합니다. 이것이 하나님의 역사 방식입니다.</p>
+  </section>
+
+  <section class="beat reveal">
+    <div class="tag">인구조사와 진노</div>
+    <blockquote>또다시… 여호와의 진노가 불붙었다<span class="cite">사무엘하 24:1</span></blockquote>
+    <p>다윗은 백성을 계수합니다. 이것은 단순한 행정이 아니라, 하나님이 아닌 숫자를 의지하려는 마음의 드러남이었습니다. 그리고 곧바로 그의 마음이 찔립니다.</p>
+    <blockquote>제가 이 일을 하여 큰 죄를 지었습니다<span class="cite">사무엘하 24:10</span></blockquote>
+    <p>이 고백은 다윗의 위대함이 어디에 있는지를 보여 줍니다. 그는 죄를 짓지 않는 사람이 아니라, 죄를 깨닫고 하나님께 돌아오는 사람이었습니다.</p>
+    <p>재앙이 임하고, 칠만 명이 죽습니다(24:15). 그러나 하나님은 멈추십니다.</p>
+    <blockquote>그만하면 됐으니, 이제 네 손을 거두어라<span class="cite">사무엘하 24:16</span></blockquote>
+    <p>심판 가운데서도 하나님의 마음은 멈춤을 향합니다. 하나님은 멸망을 기뻐하지 않으시기 때문입니다.</p>
+    <p>그때 다윗은 말합니다.</p>
+    <blockquote>죄를 저지른 사람도 저입니다… 이 양들이 무슨 일을 저질렀습니까?<span class="cite">사무엘하 24:17</span></blockquote>
+    <p>왕이 백성을 대신하여 서는 이 장면은, 훗날 오실 참된 왕의 그림자를 드러냅니다. 자기 백성을 대신하여 책임을 짊어지는 왕—이것이 하나님의 통치가 향하는 방향입니다.</p>
+  </section>
+
+  <section class="beat dawn reveal">
+    <div class="tag">제단과 그침</div>
+    <p>다윗은 타작마당에서 제단을 쌓습니다.</p>
+    <blockquote>나는 거저 얻은 것을… 바치지 않겠습니다<span class="cite">사무엘하 24:24</span></blockquote>
+    <p>희생 없는 예배는 존재하지 않습니다. 하나님께 나아가는 길은 반드시 대가를 포함합니다.</p>
+    <p>그리고 마지막 구절이 조용히 말합니다.</p>
+    <blockquote>여호와께서… 간청을 들어주셨고, 재앙이 이스라엘에서 그쳤다<span class="cite">사무엘하 24:25</span></blockquote>
+  </section>
+
+</main>
+
+<footer class="close reveal">
+  <div class="flow">죄 → 심판 → 속죄 → 회복</div>
+  <p>이 모든 이야기를 따라가다 보면, 하나의 흐름이 드러납니다. 그러나 이 반복 속에서 점점 더 선명해지는 것이 있습니다. 인간의 반복되는 실패에도 불구하고, 하나님은 언약을 붙들고 역사를 끌고 가신다는 사실입니다.</p>
+  <p>다윗의 시대는 끝나가고 있지만, 하나님의 경륜은 끝나지 않습니다. 기근 속에서도, 전쟁 속에서도, 노래 속에서도, 실패 속에서도—하나님은 한 가지를 이루어 가십니다.</p>
+  <p>그것은 단순히 한 왕국의 유지가 아니라, 하나님과 사람 사이의 완전한 회복, 곧 하나님 자신이 사람과 함께 거하시며 다스리시는 나라입니다.</p>
+  <p class="final">하나님의 목적은 사람의 성공이 아니라, 하나님 자신을 사람 안에 세우시는 것입니다. 그리하여 결국, 하나님이 참된 반석이 되시고(22:32), 사람은 그 안에서 살게 되는 것— 이것이 사무엘기의 마지막 장면이 조용히 가리키고 있는 하나님의 궁극적인 경륜입니다.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var canvas = document.getElementById('embers');
+  var ctx = canvas.getContext('2d');
+  var w, h, particles = [];
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize(){
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var count = w < 640 ? 22 : 40;
+  for (var i = 0; i < count; i++){
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: 0.6 + Math.random() * 1.8,
+      speed: 0.15 + Math.random() * 0.4,
+      drift: (Math.random() - 0.5) * 0.3,
+      alpha: 0.15 + Math.random() * 0.35
+    });
+  }
+
+  function colorForProgress(p){
+    // interpolate warm dusk -> gold as page scrolls
+    var c1 = [227,185,104]; // gold
+    var c2 = [154,90,58];   // ember
+    var t = p;
+    var r = Math.round(c2[0] + (c1[0]-c2[0]) * t);
+    var g = Math.round(c2[1] + (c1[1]-c2[1]) * t);
+    var b = Math.round(c2[2] + (c1[2]-c2[2]) * t);
+    return r+','+g+','+b;
+  }
+
+  function frame(){
+    if (!reduceMotion){
+      ctx.clearRect(0,0,w,h);
+      var docH = document.body.scrollHeight - window.innerHeight;
+      var progress = docH > 0 ? Math.min(1, window.scrollY / docH) : 0;
+      var rgb = colorForProgress(progress);
+      particles.forEach(function(p){
+        p.y -= p.speed;
+        p.x += p.drift;
+        if (p.y < -5){ p.y = h + 5; p.x = Math.random() * w; }
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(' + rgb + ',' + p.alpha + ')';
+        ctx.fill();
+      });
+    }
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+</script>
+
+</body>
+</html>

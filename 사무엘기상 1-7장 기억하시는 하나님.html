@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기억하시는 하나님 — 사무엘기상 1~7장</title>
+<meta name="description" content="에브라임 산지의 한 여인의 눈물에서 시작되어, 하나님의 기억하심과 사무엘의 부르심, 이스라엘의 돌아옴으로 이어지는 사무엘기상 1장부터 7장까지의 묵상.">
+<meta property="og:title" content="기억하시는 하나님 — 사무엘기상 1~7장">
+<meta property="og:description" content="에브라임 산지의 한 여인의 눈물에서 시작되어, 하나님의 기억하심과 사무엘의 부르심, 이스라엘의 돌아옴으로 이어지는 사무엘기상 1장부터 7장까지의 묵상.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#150f0b;
+    --bg-1:#1c1510;
+    --bg-2:#241b14;
+    --panel:#2a2018;
+    --line:rgba(242,230,211,0.09);
+    --text-0:#f2e6d3;
+    --text-1:#cdb99c;
+    --text-2:#93826c;
+    --gold:#c8a03c;
+    --gold-soft:#e3c877;
+    --wine:#9a5451;
+    --wine-soft:#c17f7c;
+    --slate:#647079;
+    --slate-soft:#8a97a0;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html{ scroll-behavior:smooth; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+  }
+
+  body{
+    background:var(--bg-1);
+    color:var(--text-0);
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--gold); color:var(--bg-0); }
+
+  a{ color:inherit; }
+
+  .serif{ font-family:'Noto Serif KR', serif; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:radial-gradient(ellipse at 50% 30%, var(--bg-2) 0%, var(--bg-0) 72%);
+    overflow:hidden;
+    padding:32px 24px;
+  }
+
+  #flame-canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0.85;
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width:640px;
+  }
+
+  .hero-kicker{
+    font-family:'Noto Serif KR', serif;
+    font-weight:400;
+    font-size:15px;
+    letter-spacing:0.08em;
+    color:var(--gold-soft);
+    margin-bottom:28px;
+    opacity:0.9;
+  }
+
+  .hero-title{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:clamp(38px, 8vw, 64px);
+    line-height:1.3;
+    color:var(--text-0);
+    letter-spacing:-0.01em;
+  }
+
+  .hero-sub{
+    margin-top:22px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    font-size:16px;
+    color:var(--text-1);
+  }
+
+  .hero-sub .sep{
+    display:block;
+    margin-top:4px;
+    color:var(--text-2);
+    font-size:14px;
+  }
+
+  .hero-verse{
+    margin-top:56px;
+    padding-top:36px;
+    border-top:1px solid var(--line);
+  }
+
+  .hero-verse p{
+    font-family:'Noto Serif KR', serif;
+    font-weight:400;
+    font-size:clamp(18px, 3vw, 22px);
+    color:var(--text-0);
+    line-height:1.9;
+  }
+
+  .hero-verse cite{
+    display:block;
+    margin-top:14px;
+    font-style:normal;
+    font-size:14px;
+    color:var(--gold-soft);
+    letter-spacing:0.02em;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+    width:1px;
+    height:52px;
+    background:linear-gradient(to bottom, var(--gold-soft), transparent);
+    opacity:0.5;
+  }
+
+  /* ---------- Narrative ---------- */
+  .narrative{
+    max-width:700px;
+    margin:0 auto;
+    padding:0 28px 40px;
+  }
+
+  .beat{
+    position:relative;
+    padding:64px 0 64px 34px;
+    border-bottom:1px solid var(--line);
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  .beat.visible{ opacity:1; transform:translateY(0); }
+
+  .beat:last-of-type{ border-bottom:none; }
+
+  .beat::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:76px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--slate);
+    box-shadow:0 0 10px var(--slate);
+  }
+
+  .beat::after{
+    content:'';
+    position:absolute;
+    left:4px;
+    top:88px;
+    bottom:-1px;
+    width:1px;
+    background:var(--line);
+  }
+
+  .beat:last-of-type::after{ display:none; }
+
+  .beat[data-tone="wine"]::before{ background:var(--wine); box-shadow:0 0 10px var(--wine); }
+  .beat[data-tone="gold"]::before{ background:var(--gold); box-shadow:0 0 12px var(--gold); }
+  .beat[data-tone="slate"]::before{ background:var(--slate); box-shadow:0 0 8px var(--slate); }
+  .beat[data-tone="amber"]::before{ background:var(--gold-soft); box-shadow:0 0 12px var(--gold-soft); }
+
+  .beat-label{
+    display:block;
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:clamp(22px, 4vw, 28px);
+    color:var(--text-0);
+    margin-bottom:26px;
+  }
+
+  .beat-ref{
+    display:inline-block;
+    margin-bottom:26px;
+    margin-top:-16px;
+    font-size:13px;
+    color:var(--text-2);
+    letter-spacing:0.02em;
+  }
+
+  .beat p{
+    font-size:16.5px;
+    font-weight:300;
+    color:var(--text-1);
+    margin-bottom:20px;
+  }
+
+  .beat p:last-child{ margin-bottom:0; }
+
+  .beat blockquote{
+    font-family:'Noto Serif KR', serif;
+    font-weight:500;
+    font-size:19px;
+    line-height:1.85;
+    color:var(--text-0);
+    margin:26px 0;
+    padding:20px 24px;
+    background:var(--panel);
+    border-left:2px solid var(--gold);
+    border-radius:2px;
+  }
+
+  .beat[data-tone="wine"] blockquote{ border-left-color:var(--wine-soft); }
+  .beat[data-tone="slate"] blockquote{ border-left-color:var(--slate-soft); }
+  .beat[data-tone="amber"] blockquote{ border-left-color:var(--gold-soft); }
+
+  .beat blockquote cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:400;
+    font-size:13px;
+    color:var(--text-2);
+  }
+
+  /* ---------- Song block (2:2, 2:7 / 2:10) ---------- */
+  .song{
+    text-align:center;
+    padding:48px 32px;
+    margin:26px 0;
+    background:linear-gradient(180deg, rgba(200,160,60,0.06), transparent);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+
+  .song p{
+    font-family:'Noto Serif KR', serif;
+    font-weight:500;
+    font-size:clamp(19px, 3vw, 23px);
+    line-height:2;
+    color:var(--gold-soft);
+    max-width:520px;
+    margin:0 auto 16px;
+  }
+
+  .song cite{
+    display:block;
+    font-style:normal;
+    font-size:13px;
+    color:var(--text-2);
+    margin-top:8px;
+  }
+
+  /* ---------- Closing ---------- */
+  .closing{
+    max-width:640px;
+    margin:0 auto;
+    padding:100px 28px 120px;
+    text-align:center;
+  }
+
+  .closing-line{
+    font-family:'Noto Serif KR', serif;
+    font-weight:500;
+    font-size:clamp(21px, 4vw, 27px);
+    line-height:1.75;
+    color:var(--text-0);
+    margin-bottom:24px;
+  }
+
+  .closing p.body{
+    font-size:15.5px;
+    color:var(--text-1);
+    margin-bottom:14px;
+  }
+
+  .closing-mark{
+    margin-top:48px;
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+    color:var(--text-2);
+    letter-spacing:0.04em;
+  }
+
+  @media (max-width:520px){
+    .beat{ padding-left:26px; }
+    .beat-ref{ margin-top:-14px; }
+    .beat blockquote{ padding:16px 18px; font-size:17.5px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <canvas id="flame-canvas"></canvas>
+  <div class="hero-content">
+    <p class="hero-kicker serif">사무엘기상 1장 · 7장</p>
+    <h1 class="hero-title">기억하시는 하나님</h1>
+    <p class="hero-sub">눈물에서 부르심까지<span class="sep">한 여인의 기도로 시작된 이야기</span></p>
+    <div class="hero-verse">
+      <p>“에브라임 산지 라마다임소빔 출신의 한 남자가 있었는데, 이름은 엘가나였다.”</p>
+      <cite>사무엘기상 1:1</cite>
+    </div>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<main class="narrative">
+
+  <section class="beat" data-tone="wine">
+    <span class="beat-label serif">결핍의 자리</span>
+    <p>이 한 문장은 평범한 한 가정의 이야기처럼 시작됩니다. 그러나 성경은 언제나 그렇듯, 평범해 보이는 자리에서 하나님의 깊은 경륜을 조용히 펼쳐 보이십니다. 이름도, 가계도도, 배경도 소개되는 이 장면은 단순한 역사 기록이 아니라, 하나님께서 사람의 역사 속으로 어떻게 들어오시는지를 보여주는 시작입니다.</p>
+    <p>엘가나의 집에는 두 여인이 있었습니다. 브닌나는 자녀가 있었고, 한나는 자녀가 없었습니다. 그런데 성경은 뜻밖의 한 문장을 덧붙입니다.</p>
+    <blockquote>“여호와는 한나의 태를 닫아 놓으셨다.”<cite>삼상 1:5</cite></blockquote>
+    <p>이 고백은 단순한 상황 설명이 아니라, 하나님께서 이미 이 이야기의 주도권을 쥐고 계심을 드러냅니다. 인간의 결핍과 고통 뒤에는 우연이 아니라 하나님의 의도가 숨겨져 있습니다. 한나의 공허함은 단순한 개인의 슬픔이 아니라, 하나님께서 새로운 역사를 시작하시기 위한 비워진 자리였습니다.</p>
+    <p>그 빈자리는 점점 깊어집니다.</p>
+    <blockquote>“한나는 먹지도 않고 울기만 하였다.”<cite>삼상 1:7</cite></blockquote>
+    <p>사람의 위로는 닿지 않습니다. 남편의 사랑도, 환경의 배려도 이 공허를 채울 수 없습니다. 왜냐하면 하나님께서 허락하신 결핍은 하나님만으로 채워지도록 만들어졌기 때문입니다. 인간의 한계가 끝나는 지점에서 비로소 하나님을 향한 진짜 기도가 시작됩니다.</p>
+  </section>
+
+  <section class="beat" data-tone="wine">
+    <span class="beat-label serif">하나님께 쏟아낸 기도</span>
+    <p>마침내 한나는 성전으로 나아갑니다.</p>
+    <blockquote>“한나는 혼이 괴로워 여호와께 기도하며 많이 울었다.”<cite>삼상 1:10</cite></blockquote>
+    <p>이 장면은 단순한 간구가 아닙니다. 그녀는 자신의 고통을 하나님께 ‘쏟아냅니다’. 그리고 이렇게 서원합니다.</p>
+    <blockquote>“그 아이의 일생을 여호와께 바치겠습니다.”<cite>삼상 1:11</cite></blockquote>
+  </section>
+
+  <section class="beat" data-tone="amber">
+    <span class="beat-label serif">하나님의 경륜이 드러나다</span>
+    <p>여기서 하나님의 경륜이 드러납니다. 하나님은 단순히 한 여인의 문제를 해결하려는 것이 아니라, 한 시대를 바꾸기 위한 사람을 준비하고 계셨습니다. 한나의 기도는 개인의 필요에서 시작되었지만, 하나님의 목적과 연결되면서 역사의 문이 열리기 시작합니다.</p>
+  </section>
+
+  <section class="beat" data-tone="gold">
+    <span class="beat-label serif">기억하시는 하나님</span>
+    <p>그리고 성경은 조용히 선언합니다.</p>
+    <blockquote>“여호와께서 한나를 기억하셨다.”<cite>삼상 1:19</cite></blockquote>
+    <p>하나님께서 기억하신다는 것은 단순한 회상이 아니라, 약속의 성취를 시작하신다는 의미입니다. 그 결과로 태어난 아이가 바로 사무엘입니다.</p>
+    <blockquote>“내가 여호와께 그를 구하였다.”<cite>삼상 1:20</cite></blockquote>
+    <p>이 아이는 한 가정의 기쁨을 넘어, 하나님께서 타락한 시대 가운데 세우신 새로운 통로였습니다.</p>
+  </section>
+
+  <section class="beat" data-tone="gold">
+    <span class="beat-label serif">드려진 아이</span>
+    <p>한나는 약속을 지킵니다.</p>
+    <blockquote>“이 아이는 일생 동안 여호와께 빌려드린 아이입니다.”<cite>삼상 1:28</cite></blockquote>
+    <p>여기서 우리는 하나님의 또 다른 원리를 봅니다. 하나님께 받은 것은 다시 하나님께 드려질 때, 그 의미가 완성됩니다. 인간은 소유자가 아니라 맡은 자이며, 드림을 통해 하나님의 계획에 참여하게 됩니다.</p>
+  </section>
+
+  <div class="song">
+    <p>“여호와처럼 거룩한 이 없으니… 그분께서 낮추기도 하시고 높이기도 하신다.”</p>
+    <cite>삼상 2:2, 7</cite>
+  </div>
+
+  <section class="beat" data-tone="amber">
+    <span class="beat-label serif">한나의 찬양</span>
+    <p>이후 한나의 찬양이 이어집니다. 이 노래는 단순한 감사가 아니라, 하나님 나라의 원리를 선언합니다. 하나님은 뒤집으시는 분입니다. 낮은 자를 높이시고, 강한 자를 꺾으십니다. 이 흐름은 훗날 왕정으로, 더 나아가 메시아의 오심으로 이어지는 하나님의 큰 이야기의 방향을 보여줍니다.</p>
+  </section>
+
+  <section class="beat" data-tone="slate">
+    <span class="beat-label serif">무너진 성전</span>
+    <p>그러나 동시에 어둠도 깊어지고 있었습니다.</p>
+    <blockquote>“엘리의 아들들은 여호와를 알지 못하였다.”<cite>삼상 2:12</cite></blockquote>
+    <p>성전 안에서조차 하나님을 알지 못하는 일이 벌어집니다. 제사는 드려지지만, 하나님은 무시되고 있었습니다. 이것은 단순한 타락이 아니라, 하나님과의 관계가 형식으로만 남아버린 상태였습니다.</p>
+    <p>그래서 하나님은 선언하십니다.</p>
+    <blockquote>“나를 존중하는 사람을 내가 존중하고…”<cite>삼상 2:30</cite></blockquote>
+    <p>이 말씀은 단순한 심판이 아니라, 하나님의 경륜의 기준입니다. 하나님은 제도나 혈통이 아니라, 마음과 관계를 기준으로 일하십니다. 그리고 그 기준에 따라 새로운 사람을 세우십니다.</p>
+  </section>
+
+  <section class="beat" data-tone="gold">
+    <span class="beat-label serif">부르심</span>
+    <p>그때 한 소년이 조용히 자라고 있었습니다.</p>
+    <blockquote>“소년 사무엘은 여호와 앞에서 자라 갔다.”<cite>삼상 2:21</cite></blockquote>
+    <p>그리고 마침내 하나님이 그를 부르십니다.</p>
+    <blockquote>“사무엘아, 사무엘아… 말씀하십시오. 이 종이 듣고 있습니다.”<cite>삼상 3:10</cite></blockquote>
+    <p>이 장면은 단순한 소명의 이야기가 아닙니다.</p>
+    <blockquote>“여호와의 말씀이 희귀하였다.”<cite>삼상 3:1</cite></blockquote>
+    <p>말씀이 사라진 시대에 하나님은 다시 말씀하시기 위해 한 사람을 준비하셨습니다. 사무엘은 단순한 인물이 아니라, 끊어진 하나님과의 소통을 회복하는 통로였습니다.</p>
+  </section>
+
+  <section class="beat" data-tone="slate">
+    <span class="beat-label serif">영광이 떠나다</span>
+    <p>그러나 이스라엘은 여전히 깨닫지 못합니다. 그들은 전쟁에서 패하자 이렇게 말합니다.</p>
+    <blockquote>“언약궤를 가져오자.”<cite>삼상 4:3</cite></blockquote>
+    <p>그들은 하나님을 찾지 않고, 하나님을 ‘이용’하려 합니다. 결국 궤는 빼앗기고,</p>
+    <blockquote>“영광이 이스라엘에서 떠났다.”<cite>삼상 4:21</cite></blockquote>
+    <p>이 선언은 단순한 패배의 기록이 아니라, 하나님 없는 종교의 끝을 보여줍니다.</p>
+  </section>
+
+  <section class="beat" data-tone="gold">
+    <span class="beat-label serif">스스로 영광을 지키시는 하나님</span>
+    <p>하지만 놀랍게도, 하나님의 영광은 인간의 실패로 사라지지 않습니다. 블레셋 땅에서조차 하나님은 스스로를 드러내십니다.</p>
+    <p>다곤이 넘어지고, 재앙이 임합니다.</p>
+    <p class="beat-ref">삼상 5장</p>
+    <p>이 장면은 분명히 말합니다. 하나님은 인간에게 의존하지 않으시는 분이며, 스스로 영광을 지키시는 분이십니다.</p>
+  </section>
+
+  <section class="beat" data-tone="amber">
+    <span class="beat-label serif">거룩하신 하나님 앞에</span>
+    <p>결국 궤는 돌아옵니다. 그러나 사람들은 여전히 하나님을 가볍게 여깁니다.</p>
+    <blockquote>“누가 이 거룩하신 하나님 앞에 설 수 있겠습니까?”<cite>삼상 6:20</cite></blockquote>
+    <p>이 질문은 두려움에서 나온 것이지만, 동시에 진리를 담고 있습니다. 하나님은 가까우신 분이지만, 동시에 거룩하신 분이십니다.</p>
+  </section>
+
+  <section class="beat" data-tone="wine">
+    <span class="beat-label serif">마음의 돌아옴</span>
+    <p>시간이 흐르고, 백성은 다시 하나님을 찾기 시작합니다.</p>
+    <blockquote>“이스라엘 온 집이 여호와를 구하며 애곡하였다.”<cite>삼상 7:2</cite></blockquote>
+    <p>그리고 사무엘은 말합니다.</p>
+    <blockquote>“마음을 다하여 여호와께 돌아오라.”<cite>삼상 7:3</cite></blockquote>
+    <p>이것이 하나님이 원하셨던 것입니다. 형식이 아니라 마음, 제사가 아니라 관계, 도구가 아니라 하나님 자신을 향한 돌아옴입니다.</p>
+  </section>
+
+  <section class="beat" data-tone="gold">
+    <span class="beat-label serif">에벤에셀</span>
+    <p>그들이 돌이킬 때 하나님은 응답하십니다.</p>
+    <blockquote>“여호와께서 큰 천둥소리를 내시어…”<cite>삼상 7:10</cite></blockquote>
+    <p>그리고 사무엘은 돌을 세웁니다.</p>
+    <blockquote>“여호와께서 우리를 여기까지 도우셨다.”<cite>삼상 7:12</cite></blockquote>
+    <p>이 돌은 단순한 기념물이 아닙니다. 인간의 역사 속에 하나님이 실제로 개입하셨음을 증거하는 표지입니다.</p>
+  </section>
+
+  <div class="closing">
+    <p class="closing-line">한 여인의 눈물에서 시작된 이야기가,<br>한 시대의 회복으로 이어집니다.</p>
+    <p class="body">이 모든 이야기는 하나로 이어집니다. 개인의 고통이 하나님의 역사로 확장됩니다. 타락한 제사장 체계는 무너지고, 하나님은 새로운 통로를 세우십니다.</p>
+    <p class="body">그리고 이 흐름은 멈추지 않습니다.</p>
+    <div class="song" style="border:none; padding:32px 0;">
+      <p>“그분의 왕에게 힘을 주시고, 그분의 기름부음 받은 이의 뿔을 높이시리라.”</p>
+      <cite>삼상 2:10</cite>
+    </div>
+    <p class="body">이 말씀은 사무엘을 넘어 다윗을 향하고, 더 나아가 궁극적으로 그리스도를 향합니다.</p>
+    <p class="body">결국 하나님께서 이루고자 하시는 것은 단순한 문제 해결이나 한 시대의 회복이 아닙니다. 하나님은 사람을 얻으시고, 그 사람을 통해 자신을 나타내시며, 그들 가운데 거하시기를 원하십니다.</p>
+    <p class="closing-line" style="margin-top:40px;">사무엘기의 시작은 이렇게 말하고 있습니다.<br>하나님의 경륜은 인간의 결핍 속에서 시작되어,<br>하나님의 임재의 회복으로 나아가며,<br>결국 하나님과 사람이 함께하는 자리로 향하고 있다는 것을.</p>
+    <p class="body" style="margin-top:28px;">그리고 그 이야기는 지금도 여전히 이어지고 있습니다.</p>
+    <p class="closing-mark">사무엘기상 1장 — 7장</p>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Scroll reveal */
+  var beats = document.querySelectorAll('.beat');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -60px 0px' });
+    beats.forEach(function(b){ io.observe(b); });
+  } else {
+    beats.forEach(function(b){ b.classList.add('visible'); });
+  }
+
+  /* Hero lamp-flame canvas */
+  var canvas = document.getElementById('flame-canvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w, h, dpr;
+
+  function resize(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = canvas.clientWidth;
+    h = canvas.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var embers = [];
+  var emberCount = 26;
+  for(var i=0;i<emberCount;i++){
+    embers.push({
+      x: Math.random()*1,
+      y: Math.random()*1,
+      r: 0.6 + Math.random()*1.6,
+      speed: 0.06 + Math.random()*0.12,
+      drift: (Math.random()-0.5)*0.04,
+      phase: Math.random()*Math.PI*2
+    });
+  }
+
+  var t = 0;
+
+  function draw(){
+    t += 0.016;
+    ctx.clearRect(0,0,w,h);
+
+    /* flickering warm glow, centered slightly above middle */
+    var flicker = 0.75 + 0.08*Math.sin(t*2.3) + 0.05*Math.sin(t*5.1) + 0.03*Math.sin(t*11.0);
+    var cx = w*0.5, cy = h*0.42;
+    var radius = Math.max(w,h) * 0.55 * flicker;
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+    grad.addColorStop(0, 'rgba(201,160,60,' + (0.16*flicker) + ')');
+    grad.addColorStop(0.4, 'rgba(154,84,81,' + (0.07*flicker) + ')');
+    grad.addColorStop(1, 'rgba(21,15,11,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,w,h);
+
+    /* rising embers */
+    for(var i=0;i<embers.length;i++){
+      var e = embers[i];
+      e.y -= e.speed*0.0035;
+      e.x += Math.sin(t*0.6 + e.phase)*0.0006 + e.drift*0.0006;
+      if(e.y < -0.05){
+        e.y = 1.05;
+        e.x = Math.random();
+      }
+      var px = e.x*w, py = e.y*h;
+      var alpha = 0.35 * (0.5 + 0.5*Math.sin(t*1.4 + e.phase));
+      ctx.beginPath();
+      ctx.arc(px, py, e.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(227,200,119,' + alpha + ')';
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  if(!reduceMotion){
+    requestAnimationFrame(draw);
+  } else {
+    /* draw a single static frame */
+    draw = (function(orig){
+      return function(){};
+    })(draw);
+    t = 0;
+    var cx = w*0.5, cy = h*0.42;
+    var grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(w,h)*0.5);
+    grad.addColorStop(0, 'rgba(201,160,60,0.14)');
+    grad.addColorStop(1, 'rgba(21,15,11,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0,0,w,h);
+  }
+})();
+</script>
+
+</body>
+</html>
